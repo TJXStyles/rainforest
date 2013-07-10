@@ -1,7 +1,8 @@
 <h1>Item</h1>
 
 <p><strong>Product: </strong><%= @product[:name] %></p>
-
+<p><strong>Description: </strong><%= @product[:description] %></p>
+<p><strong>Price: </strong><%= @product[:price_in_cents] %></p>
 
 	<% if current_user %>
 		<h3>Reviews</h3>
@@ -34,7 +35,7 @@
 <% end %>
 	<div class="field">
 		<%= f.label :comment %>
-		<%= f.text_area :comment %>
+		<%= f.text_area :comment, :size => "30x5" %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
