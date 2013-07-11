@@ -1,0 +1,15 @@
+<h3>Edit Product</h3>
+
+<div class="well">
+<%= form_for @product do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :formatted_price, "Price" %>
+<%= f.text_field :formatted_price%>
+<p>
+	<%= f.submit "Save" %>
+</p>
+
+<% end %>

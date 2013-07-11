@@ -1,9 +1,11 @@
-<h1>Item</h1>
-<div class="well"
-<p><strong>Product: </strong><%= @product[:name] %></p>
-<p><strong>Description: </strong><%= @product[:description] %></p>
-<p><strong>Price: </strong><%= @product.formatted_price %></p>
+<div class="well">
+<h2><%= @product[:name] %></h3>
+	<%= image_tag @product.image.url(:medium) %><br>
+	<p><strong>Price: </strong>$<%= @product.formatted_price %></p>
+	<p><strong>Description: </strong><%= @product[:description] %></p>
+	<%= link_to "Edit", edit_product_path %>
 </div>
+
 	<% if current_user %>
 		<h3>Reviews</h3>
 			<div class="well">
@@ -15,6 +17,7 @@
 				Added on: <%= review.created_at %>
 				<% end %>
 	<% end %>
+	
 			</div>
 
 <h4>New Review</h4>
