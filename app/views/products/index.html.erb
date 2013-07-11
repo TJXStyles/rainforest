@@ -1,4 +1,4 @@
-<h1>Products</h1>
+<h3>Products</h3>
 
 <% @products.each do |product| %>
 	<div class="well">
@@ -7,6 +7,7 @@
 	<%= product.name %></p>
 	<% end %>
 	<p>Description: <%= product.description %></p>
+	<p>Tags: <%= product.tag_list %>
 	<p>Price: <%= product.formatted_price %></p>
 </div>
 <% end %>

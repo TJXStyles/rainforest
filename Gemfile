@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'bcrypt-ruby'
 gem 'paperclip'
+gem 'acts-as-taggable-on'
 
 # Gems used only for assets and not required
 # in production environments by default.

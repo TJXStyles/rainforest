@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 
 		respond_to do |format|
-			if @product.update_attribute(params[:product])
+			if @product.update_attributes(params[:product])
 				format.html { redirect_to @product, notice: 'Product was successfully updated' }
 				format.json { head :no_content }
 			else
@@ -72,5 +72,17 @@ class ProductsController < ApplicationController
 			format.json { head :no_content }
 		end
 	end
+
+##### For deleting Photos #####
+
+  def delete_photo=(value)
+    @delete_photo = !value.to_i.zero?
+  end
+  
+  def delete_photo
+    !!@delete_photo
+  end
+  
+  alias_method :delete_photo?, :delete_photo
 
 end
