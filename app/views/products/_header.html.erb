@@ -1,19 +1,19 @@
 <div class="navbar navbar-fixed-top">
 	<div class="navbar navbar-inverse">
-			<div class="navbar-inner">
-				<%= link_to "Rainforest", root_path, class: "brand" %>
+		<div class="navbar-inner">
+			<%= link_to "Rainforest", root_path, class: "brand" %>
 
-				<ul class="nav pull-right">
-					<% if current_user %>
-						<li><%= link_to "Add +", new_product_path %>
-						<li><%= link_to current_user.email, user_path(current_user) %></li>
-						<li><%= link_to "log out", session_path("current"), :method => :delete %></li>
+			<ul class="nav pull-right">
+				<% if current_user %>
+					<li><%= link_to "Add +", new_product_path %>
+					<li><%= link_to current_user.email, user_path(current_user) %></li>
+					<li><%= link_to "log out", session_path("current"), :method => :delete %></li>
 
-					<% else %>
-						<%= link_to "Log in", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
-					<% end %>
-				</ul>
-			</div>
+				<% else %>
+					<li><%= link_to "Log in", new_session_path %></li><li><%= link_to "Sign Up", new_user_path %></li>
+				<% end %>
+			</ul>
+		</div>
 		
 	</div>
 </div>

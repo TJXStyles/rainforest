@@ -4,7 +4,7 @@
 <% @products.each do |product| %>
 	<div class="well">
 	<%= link_to product_path(product.id) do %>
-		<p><%= product.name %></p>
+	<p><%= product.name %></p>
 	<% end %>
 	<p><%= product.description %></p>
 </div>

@@ -12,4 +12,12 @@ class Product < ActiveRecord::Base
   	sprintf("%.2f", price_in_dollars)
   end
 
+  def self.search(search)
+  	if search
+  		where('name LIKE ?', "%#{search}%")
+  	else
+  		scoped
+  	end
+  end
+  
 end

@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	@review = @product.reviews.build(params[:review])
+  	@review = @product.reviews.build(:comment => params[:review][:comment], :product_id => @product.id, :user_id => current_user.id)
     if @review.save
 		  redirect_to products_path, notice: "Review created successfully"
         else
