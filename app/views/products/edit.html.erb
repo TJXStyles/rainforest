@@ -9,12 +9,20 @@
 <%= f.text_field :tag_list %>
 
 <%= f.label :description %>
-<%= f.text_field :description %>
+<%= f.text_area :description, :size => "30x10" %>
+
 <%= f.label :price_in_cents, "Price" %>
 <%= f.text_field :price_in_cents %>
-<p><%= image_tag @product.image.url(:medium) %>
+<p><%= f.file_field :image %></p>
+
+ <label>
+  <%= f.check_box :remove_image %>
+      Remove Image
+    </label>
+    <p> <%= image_tag @product.image.url(:thumb) %></p>
 <p>
 	<%= f.submit "Save" %>
 </p>
+<p><%= link_to "Back", product_path %></p>
 
 <% end %>

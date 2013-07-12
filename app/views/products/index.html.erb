@@ -7,7 +7,7 @@
 	<%= product.name %></p>
 	<% end %>
 	<p>Description: <%= product.description %></p>
-	<p>Tags: <%= product.tag_list %>
+	<p>Tags: <%= raw product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 	<p>Price: <%= product.formatted_price %></p>
 </div>
 <% end %>

@@ -1,12 +1,15 @@
 class ProductsController < ApplicationController
 
   def index
-  	@products = Product.all
-
+    if params[:tag]
+      @products = Product.tagged_with(params[:tag])
+    else
+  	  @products = Product.all
+    end
   	respond_to do |format|
   		format.html
   		format.json { render json: @products}
-  	end
+    end
   end
 
   def show
@@ -75,14 +78,14 @@ class ProductsController < ApplicationController
 
 ##### For deleting Photos #####
 
-  def delete_photo=(value)
-    @delete_photo = !value.to_i.zero?
-  end
+  # def delete_photo=(value)
+  #   @delete_photo = !value.to_i.zero?
+  # end
   
-  def delete_photo
-    !!@delete_photo
-  end
+  # def delete_photo
+  #   !!@delete_photo
+  # end
   
-  alias_method :delete_photo?, :delete_photo
+  # alias_method :delete_photo?, :delete_photo
 
 end
